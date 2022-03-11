@@ -1,0 +1,27 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="Search Opportunities" icon-name="standard:opportunity">
+        <lightning-layout multiple-rows="true" vertical-align="end">
+            <lightning-layout-item size="12" padding="around-small">
+                <div class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <lightning-input type="search"
+                                         value={strSearchOppName}
+                                         label="Enter Opportunity Name"
+                                         onchange={handleOpportunityName}
+                                         placeholder="Search Opportunity">
+                        </lightning-input>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <div if:true={searchData}>
+            <lightning-datatable data={searchData}
+                                 columns={columns}
+                                 key-field="id"
+                                 hide-checkbox-column="true"
+                                 onrowaction={navigateToRecord}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+</template>
