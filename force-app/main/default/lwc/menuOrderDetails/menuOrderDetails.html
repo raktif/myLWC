@@ -1,0 +1,28 @@
+<!-- Child component of menuOrder -->
+<template>
+        <lightning-record-edit-form object-api-name="Menu__c">
+            <lightning-layout class="slds-var-m-left_small">
+                <lightning-layout-item flexibility="auto" size="3">
+                    <lightning-input-field field-name="Cuisine_type__c" value={selectecCuisine}></lightning-input-field>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="3">
+                    <lightning-input-field field-name="Dish__c" value={selectedDish} onchange={getPrice}></lightning-input-field>
+                </lightning-layout-item>
+                <template if:true={price}>
+                    <lightning-layout-item flexibility="auto" size="1">
+                        <lightning-input-field field-name="Quantity__c" value={quantity} onchange={changeSubTotal}></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2" class="slds-var-m-around_xx-small slds-var-p-left_xxx-small">
+                        <label for="priceField">Unit Price</label>
+                        <lightning-input-field id="priceField" field-name="Price__c" value={price} readonly variant="label-hidden"></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" size="2" >
+                        <lightning-input id="subtotal" value={subtotal} readonly label="Sub Total"></lightning-input>
+                    </lightning-layout-item>
+                </template>
+                <lightning-layout-item flexibility="auto" size="1" class="slds-var-m-top_large slds-var-p-left_x-small">
+                    <lightning-button icon-name="action:delete" icon-position="right" variant="base" onclick={removeDish}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-record-edit-form>  
+</template>

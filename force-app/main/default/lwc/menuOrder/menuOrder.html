@@ -1,0 +1,49 @@
+<template>
+    <lightning-card title="Menu" icon-name="utility:food_and_drink">
+        <div>
+            <div class="slds-combobox slds-var-m-around_medium">
+                <lightning-input type="search" 
+                                 id="searchAccountCombobox" 
+                                 role="textbox"
+                                 label="Account"
+                                 value={accountName}
+                                 placeholder="Select an Account" 
+                                 required
+                                 onchange={handleAccountName}>
+                </lightning-input>
+                <template if:true={showValues}>
+                    <div class="slds-box slds-var-p-around_small" style="overflow-y: scroll;" >
+                        <ul>
+                            <template for:each={searchData} for:item="actObj">
+                                <li style="cursor: pointer;"
+                                    key={actObj.Id}
+                                    onclick={selectAccount}
+                                    data-value={actObj.Id}
+                                    data-label={actObj.Name}>
+                                    {actObj.Name}
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+            <lightning-button icon-name="utility:add"
+                              label="Add Dish"
+                              class="slds-var-m-around_medium"
+                              aria-setsize="1"
+                              onclick={addMenuOrderDetail}>
+            </lightning-button>
+            <template for:each={dishList} for:item="currentDish" for:index="dishIndex">
+                 <c-menu-order-details key={currentDish} data-id={dishIndex} index={dishIndex} onremovedish={removeRow}>
+                </c-menu-order-details>
+            </template>
+            <lightning-record-view-form object-api-name="Menu__c">
+                <lightning-layout>
+                    <lightning-layout-item flexibility="auto" size="4">
+                            <lightning-input-field field-name="Total_Amount__c" value={totalAmount}></lightning-input-field>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-record-view-form>
+        </div>
+    </lightning-card>
+</template>
