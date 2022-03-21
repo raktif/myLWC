@@ -50,7 +50,7 @@ export default class MenuOrderDetails extends LightningElement {
             'removedish', {
                 detail: this.index
             }
-        ); 
+        );
         this.dispatchEvent(custEvent);
     }
 }

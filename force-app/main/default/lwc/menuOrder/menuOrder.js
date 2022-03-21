@@ -16,7 +16,6 @@ export default class MenuOrder extends LightningElement {
         getLookupAccount({accName: event.detail.value})
             .then(result => {
                 this.searchData = result;
-
                 if (this.searchData != null) {
                     this.showValues = true;
                 }
