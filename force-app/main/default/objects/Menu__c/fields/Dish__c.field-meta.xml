@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dish__c</fullName>
+    <externalId>false</externalId>
+    <label>Dish</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Cuisine_type__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Arroz Carreteiro</fullName>
+                <default>false</default>
+                <label>Arroz Carreteiro</label>
+            </value>
+            <value>
+                <fullName>Brocoli Quinoa Cake</fullName>
+                <default>false</default>
+                <label>Brocoli Quinoa Cake</label>
+            </value>
+            <value>
+                <fullName>Butternut Lasagna</fullName>
+                <default>false</default>
+                <label>Butternut Lasagna</label>
+            </value>
+            <value>
+                <fullName>Cake</fullName>
+                <default>false</default>
+                <label>Cake</label>
+            </value>
+            <value>
+                <fullName>Cannelonni</fullName>
+                <default>false</default>
+                <label>Cannelonni</label>
+            </value>
+            <value>
+                <fullName>Cesar</fullName>
+                <default>false</default>
+                <label>Cesar</label>
+            </value>
+            <value>
+                <fullName>Feijão Tropeiro</fullName>
+                <default>false</default>
+                <label>Feijão Tropeiro</label>
+            </value>
+            <value>
+                <fullName>Feijoada</fullName>
+                <default>false</default>
+                <label>Feijoada</label>
+            </value>
+            <value>
+                <fullName>Fried Chicken (Bucket)</fullName>
+                <default>false</default>
+                <label>Fried Chicken (Bucket)</label>
+            </value>
+            <value>
+                <fullName>Greek</fullName>
+                <default>false</default>
+                <label>Greek</label>
+            </value>
+            <value>
+                <fullName>Ice Cream</fullName>
+                <default>false</default>
+                <label>Ice Cream</label>
+            </value>
+            <value>
+                <fullName>Indian Fried Rice</fullName>
+                <default>false</default>
+                <label>Indian Fried Rice</label>
+            </value>
+            <value>
+                <fullName>Lasagna</fullName>
+                <default>false</default>
+                <label>Lasagna</label>
+            </value>
+            <value>
+                <fullName>Pepperoni Pizza (1 Slice)</fullName>
+                <default>false</default>
+                <label>Pepperoni Pizza (1 Slice)</label>
+            </value>
+            <value>
+                <fullName>Pudin</fullName>
+                <default>false</default>
+                <label>Pudin</label>
+            </value>
+            <value>
+                <fullName>Sashimi</fullName>
+                <default>false</default>
+                <label>Sashimi</label>
+            </value>
+            <value>
+                <fullName>Spaghetti</fullName>
+                <default>false</default>
+                <label>Spaghetti</label>
+            </value>
+            <value>
+                <fullName>Summer Asian</fullName>
+                <default>false</default>
+                <label>Summer Asian</label>
+            </value>
+            <value>
+                <fullName>Sushi</fullName>
+                <default>false</default>
+                <label>Sushi</label>
+            </value>
+            <value>
+                <fullName>X-Burger with Fries</fullName>
+                <default>false</default>
+                <label>X-Burger with Fries</label>
+            </value>
+            <value>
+                <fullName>Yakisoba</fullName>
+                <default>false</default>
+                <label>Yakisoba</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Brazilian</controllingFieldValue>
+            <valueName>Arroz Carreteiro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brazilian</controllingFieldValue>
+            <valueName>Feijão Tropeiro</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Brazilian</controllingFieldValue>
+            <valueName>Feijoada</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fast Food</controllingFieldValue>
+            <valueName>Fried Chicken (Bucket)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fast Food</controllingFieldValue>
+            <valueName>Pepperoni Pizza (1 Slice)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fast Food</controllingFieldValue>
+            <valueName>X-Burger with Fries</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italian</controllingFieldValue>
+            <valueName>Cannelonni</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italian</controllingFieldValue>
+            <valueName>Lasagna</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Italian</controllingFieldValue>
+            <valueName>Spaghetti</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Japanese</controllingFieldValue>
+            <valueName>Sashimi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Japanese</controllingFieldValue>
+            <valueName>Sushi</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Japanese</controllingFieldValue>
+            <valueName>Yakisoba</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Veggie</controllingFieldValue>
+            <valueName>Brocoli Quinoa Cake</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Veggie</controllingFieldValue>
+            <valueName>Butternut Lasagna</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Veggie</controllingFieldValue>
+            <valueName>Indian Fried Rice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salad</controllingFieldValue>
+            <valueName>Cesar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salad</controllingFieldValue>
+            <valueName>Greek</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Salad</controllingFieldValue>
+            <valueName>Summer Asian</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dessert</controllingFieldValue>
+            <valueName>Cake</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dessert</controllingFieldValue>
+            <valueName>Ice Cream</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dessert</controllingFieldValue>
+            <valueName>Pudin</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
