@@ -32,20 +32,18 @@
                               class="slds-var-m-around_medium"
                               aria-setsize="1"
                               onclick={addMenuOrderDetail}>
-            </lightning-button>
+            </lightning-button> 
             <template for:each={dishList} for:item="currentDish" for:index="dishIndex">
                  <c-menu-order-details key={currentDish} data-id={dishIndex} index={dishIndex} onremovedish={removeRow}>
                 </c-menu-order-details>
-            </template>            
-            <div>
+            </template>
+            <lightning-record-view-form object-api-name="Menu__c">
                 <lightning-layout>
                     <lightning-layout-item flexibility="auto" size="4">
-                        <lightning-record-view-form object-api-name="Menu__c">
                             <lightning-input-field field-name="Total_Amount__c" value={totalAmount}></lightning-input-field>
-                        </lightning-record-view-form>
                     </lightning-layout-item>
                 </lightning-layout>
-            </div>
+            </lightning-record-view-form>
         </div>
     </lightning-card>
 </template>
