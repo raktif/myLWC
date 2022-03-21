@@ -45,7 +45,7 @@ export default class MenuOrderDetails extends LightningElement {
             })
     }
 
-    removeDish(event) {
+    removeDish() {
         const custEvent = new CustomEvent (
             'removedish', {
                 detail: this.index

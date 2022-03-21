@@ -8,8 +8,8 @@ export default class MenuOrder extends LightningElement {
     @track showValues = false;
     @api totalAmount;
     @track dishList=[];
-    // @track componentIds = [];
-    // @track componentId;
+    @track componentIds = []; //??
+    @track componentId; //??
     @track currentDish;
 
     handleAccountName(event) {
@@ -29,35 +29,28 @@ export default class MenuOrder extends LightningElement {
         this.showValues = false;
     }
 
-    addMenuOrderDetail(event) {
-        
-        // this.addComponentId();
-        // this.dishList.push(event.target);
-        // this.dishList.push(event.currentTarget);
-        this.dishList.push({count: this.dishList.length});
+    addMenuOrderDetail() {
+        this.addComponentId();
+        this.dishList.push(this.componentId);
         console.log('dishList: '+this.dishList.length);
     }
 
     removeRow(event) {
-        
         const dishIndex = event.detail;
         console.log('dishListJSON: '+JSON.stringify(this.dishList));
         console.log('dishIndex: '+dishIndex);
-        this.dishList.splice(dishIndex, 1);
-        console.log('dishListJSON: '+JSON.stringify(this.dishList));
-        // this.dishList[componentIndex].splice(1);
-        // this.componentIndex = this.componentIds.indexOf(event.target);
-        // this.dishList.splice(this.componentIds.indexOf(this.componentId), 1);    
-        // this.componentIds.splice(this.componentIds.indexOf(this.componentId), 1);
+        console.log('componentIds[dishIndex]: '+this.componentIds[dishIndex]);
+        this.dishList.splice(this.componentIds[dishIndex], 1);
+        console.log('new dishListJSON: '+JSON.stringify(this.dishList));
     }
 
-       // addComponentId() {
-    //     if (this.componentIds.length == 0) {
-    //         this.componentId = 0;
-    //     } else {
-    //         this.componentId++;
-    //     }
+       addComponentId() {
+        if (this.componentIds.length == 0) {
+            this.componentId = 0;
+        } else {
+            this.componentId++;
+        }
 
-    //     this.componentIds.push(this.componentId);
-    // }
+        this.componentIds.push(this.componentId);
+    }
 }
