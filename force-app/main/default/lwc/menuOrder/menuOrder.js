@@ -6,7 +6,7 @@ export default class MenuOrder extends LightningElement {
     @track accountId;
     @track accountName;
     @track showValues = false;
-    @track totalAmount;
+    @track totalAmount =0;
     @track dishList=[];
     @track componentIds = [];
     @track componentId;
