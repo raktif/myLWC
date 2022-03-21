@@ -32,7 +32,7 @@
                               class="slds-var-m-around_medium"
                               aria-setsize="1"
                               onclick={addMenuOrderDetail}>
-            </lightning-button>
+            </lightning-button> 
             <template for:each={dishList} for:item="currentDish" for:index="dishIndex">
                  <c-menu-order-details key={currentDish} data-id={dishIndex} index={dishIndex} onremovedish={removeRow}>
                 </c-menu-order-details>
