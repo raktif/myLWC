@@ -23,7 +23,7 @@ public with sharing class SearchController {
                 return null;
             }
             accName = '%'+accName+'%';
-            List<Account> accList = [SELECT Id, Name FROM Account WHERE Name LIKE: accName];
+            List<Account> accList = [SELECT Id, Name FROM Account WHERE Name LIKE: accName ORDER BY Name ASC];
             return accList;
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
