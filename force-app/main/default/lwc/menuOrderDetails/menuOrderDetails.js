@@ -10,7 +10,6 @@ export default class MenuOrderDetails extends LightningElement {
     @track price;
     @track quantity;
     @track subtotal;
-    subtotalArray = [];
     @track totalAmount;
     @api index;
 

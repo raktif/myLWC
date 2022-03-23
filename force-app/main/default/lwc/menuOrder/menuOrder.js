@@ -38,11 +38,10 @@ export default class MenuOrder extends LightningElement {
         this.dishList.splice(this.componentIds[dishIndex], 1);
         this.subTotalArray.splice(dishIndex, 1);
         this.changeTotalAmount(dishIndex, 0);
-
-
-        if (this.dishList.length == 0) {
+        
+        if (this.dishList.length == 0) { //If removes all rows
             this.totalAmount = 0;
-        } // ATE FUNCIONA, MAS ACHO QUE NÃO DEVERIA ESTAR AQUI
+        }
     }
 
     addComponentId() {
@@ -59,25 +58,17 @@ export default class MenuOrder extends LightningElement {
         let index;
         let value;
 
-        if (arguments.length == 2) {
-            
+        if (arguments.length == 2) { //triggered by removeRow()
             index = arguments[0];
             value = arguments[1];
-            console.log('index on removal: '+index);
-            console.log('value on removal: '+value);
             if (index == 0 && value == 0) {
                 this.subTotalArray.shift;
             }
-        } else {
-
+        } else { //triggered by addMenuOrderDetails() and customEvent onupdatetotal
             index = event.detail.id;
             value = event.detail.amount;
-            console.log('index on add/change: '+index);
-            console.log('value on add/change: '+value);
             0 == this.subTotalArray.length ? this.subTotalArray.push(value) : this.subTotalArray.splice(index, 1, value);    
         }
-
-        console.log('subTotalArray: '+this.subTotalArray);
         for (let i of this.subTotalArray) {
             this.totalAmount = this.totalAmount + i;
         }
