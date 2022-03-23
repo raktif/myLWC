@@ -34,13 +34,20 @@
                               onclick={addMenuOrderDetail}>
             </lightning-button>
             <template for:each={dishList} for:item="currentDish" for:index="dishIndex">
-                 <c-menu-order-details key={currentDish} data-id={dishIndex} index={dishIndex} onremovedish={removeRow}>
+                 <c-menu-order-details key={currentDish} 
+                                       data-id={dishIndex} 
+                                       index={dishIndex} 
+                                       onremovedish={removeRow} 
+                                       onupdatetotal={changeTotalAmount}>
                 </c-menu-order-details>
             </template>
                 <lightning-record-edit-form object-api-name="Menu__c">
                     <lightning-layout class="slds-var-m-left_large" horizontal-align="end">
                         <lightning-layout-item flexibility="auto" size="2">
-                                <lightning-input-field field-name="Total_Amount__c" readonly value={totalAmount} onchange={changeTotalAmount}></lightning-input-field>
+                                <lightning-input-field field-name="Total_Amount__c" 
+                                                       readonly 
+                                                       value={totalAmount}>
+                                </lightning-input-field>
                         </lightning-layout-item>
                         <lightning-layout-item flexibility="auto" size="1" class="slds-var-m-top_large slds-var-p-left_x-small">
                             <!-- Layout Item added to align the Total Amount field -->

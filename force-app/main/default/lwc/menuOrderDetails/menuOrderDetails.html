@@ -6,11 +6,15 @@
                     <lightning-input-field field-name="Cuisine_type__c" value={selectecCuisine}></lightning-input-field>
                 </lightning-layout-item>
                 <lightning-layout-item flexibility="auto" size="3">
+
                     <lightning-input-field field-name="Dish__c" value={selectedDish} onchange={getPrice}></lightning-input-field>
+                
                 </lightning-layout-item>
                 <template if:true={price}>
                     <lightning-layout-item flexibility="auto" size="1">
+
                         <lightning-input-field field-name="Quantity__c" value={quantity} onchange={changeSubTotal}></lightning-input-field>
+                    
                     </lightning-layout-item>
                     <lightning-layout-item flexibility="auto" size="2" class="slds-var-m-around_xx-small slds-var-p-left_xxx-small">
                         <label for="priceField">Unit Price</label>
