@@ -10,11 +10,14 @@ export default class MenuOrderDetails extends LightningElement {
     @track price;
     @track quantity;
     @track subtotal;
+    subtotalArray = [];
+    @track totalAmount;
     @api index;
 
     getPrice(event) {
-        if (this.quantity != 1) {
+        if (this.selectedDish != event.detail.value) {
             this.quantity = 1;
+            this.totalAmount = 0;
         }
         this.selectedDish = event.detail.value;
         getDishPrice({dishName: this.selectedDish})
@@ -41,8 +44,24 @@ export default class MenuOrderDetails extends LightningElement {
     calculateSubTotal() {
         subtotalCalc({quantity: this.quantity, price: this.price})
             .then (result => {
-                this.subtotal = 'US$'+result;
-            })
+                this.subtotal = 'US$ '+result;
+            }).then (()=>{
+                this.sendSubtotalToMenuOrder()
+                });
+    }
+
+    sendSubtotalToMenuOrder() {
+            let parsedSubTotal = parseFloat(this.subtotal.slice(4).replace(/,/g, '.'));
+            
+            const custEvent = new CustomEvent (
+                'updatetotal', {
+                    detail: {
+                        amount : parsedSubTotal,
+                        id: this.index
+                    }
+                }
+            );
+            this.dispatchEvent(custEvent);
     }
 
     removeDish() {
