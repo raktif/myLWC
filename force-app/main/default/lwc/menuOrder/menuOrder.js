@@ -1,5 +1,5 @@
 import { LightningElement, track, api } from 'lwc';
-import getLookupAccount from '@salesforce/apex/SearchController.searchAccounts';
+import searchAccounts from '@salesforce/apex/SearchController.searchAccounts';
 export default class MenuOrder extends LightningElement {
     @track searchData;
     @track accountId;
@@ -13,7 +13,7 @@ export default class MenuOrder extends LightningElement {
     subTotalArray = [];
 
     handleAccountName(event) {
-        getLookupAccount({accName: event.detail.value})
+        searchAccounts({accName: event.detail.value})
             .then(result => {
                 this.searchData = result;
                 if (this.searchData != null) {
@@ -21,11 +21,14 @@ export default class MenuOrder extends LightningElement {
                 }
             })
     }
-
+    
     selectAccount(event) {
         this.accountId = event.target.dataset.value;
         this.accountName = event.target.dataset.label;
         this.showValues = false;
+
+        console.log('Account Id: '+this.accountId);
+        console.log('Account Name: '+this.accountName);
     }
 
     addMenuOrderDetail() {
