@@ -1,5 +1,7 @@
-import { LightningElement, track, api } from 'lwc';
+import { LightningElement, track, api, wire } from 'lwc';
+import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import searchAccounts from '@salesforce/apex/SearchController.searchAccounts';
+import saveMenu from '@salesforce/apex/MenuController.saveMenu'
 export default class MenuOrder extends LightningElement {
     @track searchData;
     @track accountId;
@@ -26,9 +28,6 @@ export default class MenuOrder extends LightningElement {
         this.accountId = event.target.dataset.value;
         this.accountName = event.target.dataset.label;
         this.showValues = false;
-
-        console.log('Account Id: '+this.accountId);
-        console.log('Account Name: '+this.accountName);
     }
 
     addMenuOrderDetail() {
@@ -76,5 +75,36 @@ export default class MenuOrder extends LightningElement {
             this.totalAmount = this.totalAmount + i;
         }
         this.totalAmount = this.totalAmount.toFixed(2);
+    }
+
+    clearMenu() {
+        this.dishList.splice(0, this.dishList.length);
+        this.componentIds.splice(0, this.componentIds.length);
+        this.subTotalArray.splice(0, this.componentIds.length);
+        this.accountId = null;
+        this.accountName = null;
+        this.searchData = null;
+        this.totalAmount = 0;
+    }
+
+    saveMenu() {
+        saveMenu({accountId: this.accountId, totalAmount: this.totalAmount})
+            .then(result => {
+                let menuName = JSON.stringify(result).replaceAll('"', '');
+                if (menuName.length != 5) {
+                    this.dispatchEvent(new ShowToastEvent({
+                        title: 'Error.',
+                        message: 'Failed to save Menu. Please check all fields before save.',
+                        variant: 'error'
+                    }));
+                } else {
+                    this.dispatchEvent(new ShowToastEvent({
+                        title: 'Success.',
+                        message: 'Menu '+menuName+' was saved.',
+                        variant: 'success'
+                    }));
+                    this.clearMenu();
+                }
+            });
     }
 }

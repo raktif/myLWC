@@ -1,4 +1,4 @@
-public with sharing class MenuCalculations {
+public with sharing class MenuController {
     
     @AuraEnabled(Cacheable=true)
     public static Decimal dishPrice(String dishName) {
@@ -37,6 +37,27 @@ public with sharing class MenuCalculations {
             return resultString.substring(0,resultString.length()-1);
         } catch (Exception e) {
             throw new AuraHandledException(e.getMessage());
+        }
+    }
+
+    @AuraEnabled
+    public static String saveMenu(Id accountId, Decimal totalAmount) {
+
+        try {
+            if (totalAmount == 0 || accountId == null) {
+                return '';
+            }
+
+            Menu__c menu = new Menu__c(
+                Account__c = accountId,
+                Total_Amount__c = totalAmount
+            );
+            insert(menu);
+            
+            return [SELECT Name FROM Menu__c WHERE Id =: menu.Id].Name;
+
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());   
         }
     }
 }

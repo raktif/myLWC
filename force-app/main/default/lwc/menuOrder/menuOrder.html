@@ -43,18 +43,29 @@
                                        onupdatetotal={changeTotalAmount}>
                 </c-menu-order-details>
             </template>
-            <lightning-record-edit-form object-api-name="Menu__c">
-                <lightning-layout class="slds-var-m-left_large" horizontal-align="end">
-                    <lightning-layout-item flexibility="auto" size="2">
-                            <lightning-input-field field-name="Total_Amount__c" 
+            <lightning-layout class="slds-var-m-left_medium slds-var-m-top_small" horizontal-align="end">
+                <lightning-layout-item flexibility="auto" size="1" class="slds-var-p-top_medium">
+                    <lightning-button icon-name="utility:clear" label="Cancel" variant="neutral" onclick={clearMenu}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="1">
+                    <!-- empty space to fill component layout -->
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="1" class=" slds-var-p-top_medium">
+                    <lightning-button icon-name="action:approval" label="Save" size="large" variant="brand" onclick={saveMenu}></lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="6">
+                    <!-- empty space to fill component layout -->
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="2">
+                    <lightning-record-edit-form object-api-name="Menu__c">
+                        <lightning-input-field field-name="Total_Amount__c" 
                                                     readonly 
                                                     value={totalAmount}>
-                            </lightning-input-field>
-                    </lightning-layout-item>
-                    <lightning-layout-item flexibility="auto" size="1" class="slds-var-m-top_large slds-var-p-left_x-small">
-                        <!-- Layout Item added to align the Total Amount field -->
-                    </lightning-layout-item>
-                </lightning-layout>
-            </lightning-record-edit-form>
+                        </lightning-input-field>
+                    </lightning-record-edit-form>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" size="1" class="slds-var-m-top_large slds-var-p-right_x-small">
+                </lightning-layout-item>
+            </lightning-layout>
     </lightning-card>
 </template>
