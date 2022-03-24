@@ -2,8 +2,12 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Menu_Order_Log__c</fullName>
     <externalId>false</externalId>
+    <formula>Id &amp;&apos;;&apos;
+&amp;  TEXT(Total_Amount__c) &amp;&apos;;&apos;
+&amp; TEXT(CreatedDate)  &amp;&apos;;&apos;
+&amp; CreatedBy.FirstName  &amp; &apos; &apos; &amp; CreatedBy.LastName &amp;&apos;;&apos;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Menu Order Log</label>
-    <length>255</length>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
