@@ -5,6 +5,10 @@
 		<name>ApexClass</name>
 	</types>
 	<types>
+		<members>Menu__c-Menu Layout Standard</members>
+		<name>Layout</name>
+	</types>
+	<types>
 		<members>*</members>
 		<name>LightningComponentBundle</name>
 	</types>

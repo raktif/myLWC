@@ -3,7 +3,7 @@
     <fullName>Cuisine_type__c</fullName>
     <externalId>false</externalId>
     <label>Cuisine type</label>
-    <required>true</required>
+    <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -14,6 +14,11 @@
                 <fullName>Brazilian</fullName>
                 <default>false</default>
                 <label>Brazilian</label>
+            </value>
+            <value>
+                <fullName>Dessert</fullName>
+                <default>false</default>
+                <label>Dessert</label>
             </value>
             <value>
                 <fullName>Fast Food</fullName>
@@ -31,19 +36,14 @@
                 <label>Japanese</label>
             </value>
             <value>
-                <fullName>Veggie</fullName>
-                <default>false</default>
-                <label>Veggie</label>
-            </value>
-            <value>
                 <fullName>Salad</fullName>
                 <default>false</default>
                 <label>Salad</label>
             </value>
             <value>
-                <fullName>Dessert</fullName>
+                <fullName>Veggie</fullName>
                 <default>false</default>
-                <label>Dessert</label>
+                <label>Veggie</label>
             </value>
         </valueSetDefinition>
     </valueSet>
