@@ -1,6 +1,6 @@
 import { LightningElement, track, api } from 'lwc';
-import getDishPrice from '@salesforce/apex/MenuCalculations.dishPrice';
-import subtotalCalc from '@salesforce/apex/MenuCalculations.subtotal';
+import getDishPrice from '@salesforce/apex/MenuController.dishPrice';
+import subtotalCalc from '@salesforce/apex/MenuController.subtotal';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class MenuOrderDetails extends LightningElement {
@@ -35,6 +35,7 @@ export default class MenuOrderDetails extends LightningElement {
                 message: 'Quantity cannot be lower than 1.',
                 variant: 'error'
             }));
+            this.quantity = 1;
         } else {
             this.calculateSubTotal();
         }

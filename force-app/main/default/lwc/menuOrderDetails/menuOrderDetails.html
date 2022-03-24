@@ -1,3 +1,4 @@
+<!-- sldsValidatorIgnore -->
 <!-- Child component of menuOrder -->
 <template>
         <lightning-record-edit-form object-api-name="Menu__c">
@@ -21,7 +22,7 @@
                     </lightning-layout-item>
                 </template>
                 <lightning-layout-item flexibility="auto" size="1" class="slds-var-m-top_large slds-var-p-left_x-small">
-                    <lightning-button icon-name="action:delete" icon-position="right" variant="base" onclick={removeDish}></lightning-button>
+                    <lightning-button-icon icon-name="action:delete" onclick={removeDish}></lightning-button-icon>
                 </lightning-layout-item>
             </lightning-layout>
         </lightning-record-edit-form>  
