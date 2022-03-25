@@ -15,5 +15,7 @@ Layout:
 
 Field-Level Security:
 - Menu__c.Cuisine_Type__c (Visible to All)
-- Menu__c.Dish (Visible to All)
+- Menu__c.Dish__c (Visible to All)
 - Menu__c.Total_Amount__c(Visible to All)
+- Menu__c.Quantity__c (Visible to All)
+- Menu__c.Price__c (Visible to All)
