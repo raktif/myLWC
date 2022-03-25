@@ -12,3 +12,7 @@ LWC:
 
 Layout:
 - Menu__c-Menu Layout Standard
+
+Field-Level Security:
+- Menu__c.Cuisine_Type__c (Visible to All)
+- Menu__c.Dish (Visible to All)
